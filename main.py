@@ -1,6 +1,6 @@
-from flask import Flask
-from config import ProductionConfig
+from store import create_app
 
-def create_app(config_class=ProductionConfig):
-    app = Flask(__name__)
-    app.config.from_object(config_class)
+app = create_app()
+
+if __name__ == '__main__':
+    app.run(debug=True)

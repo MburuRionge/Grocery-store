@@ -21,10 +21,10 @@ def create_app():
     migrate.init_app(app, db) #initialize migration support with the app and database
     
     #import blueprints
-    from .config import Config
+    from .login import login
     
     #register the blueprints with the app
-    app.register_blueprint(config, url_prefix='/')
+    app.register_blueprint(login, url_prefix='/login')
     
     # Create database tables if it doesn't exist
     with app.app_context():
